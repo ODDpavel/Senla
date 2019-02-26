@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+
+  </style>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+function createHolder(num) {
+
+  var obj = {
+    num: num,
+    getValue(){
+      return console.log(this.num);
+    },
+    setValue(num){
+      this.num = num;
+    }
+  };
+  return obj;
+}
+var obj = createHolder(4);
+obj.getValue();
+obj.setValue(23);
+obj.getValue();
+</script>
+</html>

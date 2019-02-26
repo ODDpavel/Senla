@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+
+  </style>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+  function getDimentionalArray(array,n) {
+  var mass = [];
+  m = array.length/n;
+  for(var i = 0; i < m; i++){
+    var arr = array.slice(0, n);
+    array.splice(0,n);
+    mass.push(arr);
+  }
+  console.log(mass);
+}
+getDimentionalArray([1,2,3,4,5,6,7,8,9,10,11,12,13],3);
+</script>
+</html>

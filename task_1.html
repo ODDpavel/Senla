@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body {
+        margin-top: 20px;
+        margin-left: 20px;
+      }
+         p {
+          margin-right: 5px;
+          display: inline-block;
+          font-family: Verdana, Arial, Helvetica, sans-serif;
+          color: #333366;
+         }
+         .row {
+           margin-right: 5px;
+           font-family: Verdana, Arial, Helvetica, sans-serif;
+           color: #333366;
+         }
+
+    </style>
+
+  </head>
+  <body>
+    <div class="row">
+        <input type="text" name="text" id="sheeps_input">
+        <button type="button" name="button" onclick="valid()">Run</button>
+    </div>
+    <div class="row" id="sheeps_output">
+    </div>
+  </body>
+  <script type="text/javascript" >
+     function valid (){
+
+      var sheeps = document.getElementById('sheeps_input').value;
+      var output = document.getElementById('sheeps_output');
+
+      if(isNaN(sheeps)){
+      	 output.innerHTML = sheeps + " is not a number <br/>";
+        return;
+      } else if (sheeps < 0){
+         output.innerHTML = " Number should be more than 0  <br/>";
+         return;
+      } else if (sheeps > 10000) {
+        output.innerHTML = " We don't have so many sheep, maximum number 9999 ";
+        return;
+      } else if (sheeps != parseInt(sheeps, 10)){
+        output.innerHTML = " Number should be integer <br/>";
+        return;
+      } else {
+        output.innerHTML = "";
+      }
+
+    var newDiv = document.createElement('div');
+    	newDiv.className = 'new-class';
+	    newDiv.id = 'new-id';
+      output.appendChild(newDiv);
+
+      for (var i = 1; i <= sheeps; i++) {
+         var str = document.createElement('p');
+         str.className = 'count'
+         if (i == 1) {
+          str.innerHTML = i + ' sheep... ';
+          newDiv.appendChild(str);
+        } else {
+          str.innerHTML = i + ' sheeps... ';
+          newDiv.appendChild(str);
+        }
+      }
+
+      if (document.getElementById('new-id')){
+          var oldDiv = document.getElementById('new-id');
+          oldDiv.parentNode.replaceChild(newDiv,oldDiv);
+      }
+  }
+  </script>
+</html>

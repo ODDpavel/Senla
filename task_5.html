@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+
+  </style>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+function getLowerestIndex(arr,num) {
+  arr.push(num);
+  arr.sort((a, b) => a - b);
+  var index = arr.indexOf(num);
+  console.log("Index: " + index);
+}
+getLowerestIndex([1,4,3,2], 3.5)
+</script>
+</html>

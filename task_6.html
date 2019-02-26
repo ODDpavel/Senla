@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+
+  </style>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+
+  function createRecord(arr, elem) {
+    var space = " ";
+    var ln = arr.reduce((a,b) => a > b.length ? a : b.length, 0);
+    var max_ln = ln + 4;
+
+    console.log(elem.repeat(max_ln));
+    arr.forEach(function callback(currentValue) {
+      var rem = ln - currentValue.length;
+      console.log(elem + space + currentValue + space.repeat(rem) + space + elem);
+
+    })
+    console.log(elem.repeat(max_ln));
+  };
+  createRecord(['Create', 'a', 'frame', 'and', 'all', 'transformate'], '+');
+
+</script>
+</html>
